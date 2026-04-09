@@ -3,24 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack", 
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "16.2.2",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "@google/generative-ai": "^0.24.1",
+    "@pinecone-database/pinecone": "^7.1.0",
+    "@tailwindcss/postcss": "^4.2.2",
+    "clsx": "latest",
+    "cohere-ai": "^8.0.0",
+    "groq": "^5.20.0",
+    "groq-sdk": "^1.1.2",
+    "lucide-react": "latest",
+    "next": "latest",
+    "postcss": "^8.5.8",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwind-merge": "latest",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.2",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "@types/node": "25.5.2",
+    "@types/react": "19.2.14",
+    "typescript": "6.0.2"
   }
 }
