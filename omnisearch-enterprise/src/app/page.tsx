@@ -36,7 +36,8 @@ export default function Home() {
     setResults([]); 
 
     try {
-      const response = await fetch('http://localhost:8000/api/v1/search', {
+      const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000/api/v1";
+     const response = await fetch(`${API_BASE_URL}/search`,  {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query, role }),
