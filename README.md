@@ -2,6 +2,7 @@
 * Secure Multi-Modal Semantic Intelligence Layer for IT Organizations
   
 OmniSearch-Enterprise is a heavyweight retrieval engine that replaces traditional keyword search with high-dimensional vector similarity. It is designed to bridge data silos across Slack, Jira, and technical documentation while enforcing strict Role-Based Access Control (RBAC) and ensuring enterprise-grade precision via Cross-Encoder Re-ranking.
+
 ![alt text](https://img.shields.io/badge/Frontend-Next.js%2015-black) ![alt text](https://img.shields.io/badge/Backend-FastAPI%20(Python)-009688)
 ![alt text](https://img.shields.io/badge/VectorDB-Pinecone-blue) ![alt text](https://img.shields.io/badge/LLM-Groq%20(Llama%203.3)-orange)
 
