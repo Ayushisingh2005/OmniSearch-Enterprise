@@ -3,7 +3,8 @@ uvicorn
 python-dotenv
 groq
 pinecone-client
-cohere-ai
+cohere
 google-generativeai
 pydantic
+pydantic-settings
 python-multipart
