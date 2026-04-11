@@ -1,4 +1,4 @@
-**🔍 OmniSearch-Enterprise
+##🔍 OmniSearch-Enterprise
 *Secure Multi-Modal Semantic Intelligence Layer for IT Organizations
 OmniSearch-Enterprise is a heavyweight retrieval engine that replaces traditional keyword search with high-dimensional vector similarity. It is designed to bridge data silos across Slack, Jira, and technical documentation while enforcing strict Role-Based Access Control (RBAC) and ensuring enterprise-grade precision via Cross-Encoder Re-ranking.
 ![alt text](https://img.shields.io/badge/Frontend-Next.js%2015-black)
@@ -11,7 +11,7 @@ OmniSearch-Enterprise is a heavyweight retrieval engine that replaces traditiona
 
 *Live link=https://omnisearchenterprise.vercel.app
 
-*🚀 The 7 Heavyweight Features
+🚀 The 7 Heavyweight Features
 1. Security Layer (RBAC Filtering)
 Enforces data privacy at the database level. Every document is tagged with metadata, and the Pinecone Metadata Filter ensures that a "Junior Developer" can never retrieve sensitive "HR Manager" or "System Admin" documents, even if they are semantically relevant.
 2. Precision Re-ranking (Two-Stage Retrieval)
@@ -29,7 +29,7 @@ Optimized for cost and speed. The architecture is designed to store mathematical
 7. Unified Agentic Connectors
 Unified ingestion logic that treats Slack threads, GitHub READMEs, Jira tickets, and Confluence pages as a single "Knowledge Source of Truth."
 ---
-*🛠️ Tech Stack
+🛠️ Tech Stack
 | Component	        |  Technology                                          |
 | ----------------  | ---------------                                      |
 | Frontend	        | Next.js 15 (App Router), TypeScript, Tailwind CSS v4 |
