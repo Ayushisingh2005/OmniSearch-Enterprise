@@ -2,7 +2,7 @@ fastapi
 uvicorn
 python-dotenv
 groq
-pinecone-client
+pinecone
 cohere
 google-generativeai
 pydantic
