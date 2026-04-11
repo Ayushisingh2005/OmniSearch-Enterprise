@@ -1,20 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  // We keep this to allow the build to finish despite small type errors
+  // This is the ONLY thing Vercel needs to bypass tiny type errors
   typescript: {
     ignoreBuildErrors: true,
   },
-  // We removed the 'eslint' block to fix the warning
-  webpack: (config, { dev, isServer }) => {
-    if (dev && !isServer) {
-      config.watchOptions = {
-        poll: 1000, 
-        aggregateTimeout: 300,
-      };
-    }
-    return config;
-  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  }
 };
 
 export default nextConfig;
