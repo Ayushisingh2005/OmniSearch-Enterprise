@@ -39,7 +39,9 @@ export default function Sidebar({ role, setRole }: SidebarProps) {
   reader.readAsDataURL(file);
   reader.onload = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/v1/ocr', {
+       const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000/api/v1";
+    
+    const response = await fetch(`${API_BASE_URL}/ocr`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ image: reader.result }),
