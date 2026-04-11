@@ -10,7 +10,8 @@ OmniSearch-Enterprise is a heavyweight retrieval engine that replaces traditiona
 ![alt text](https://img.shields.io/badge/LLM-Groq%20(Llama%203.3)-orange)
 
 *Live link=https://omnisearchenterprise.vercel.app
-#🚀 The 7 Heavyweight Features
+
+*🚀 The 7 Heavyweight Features
 1. Security Layer (RBAC Filtering)
 Enforces data privacy at the database level. Every document is tagged with metadata, and the Pinecone Metadata Filter ensures that a "Junior Developer" can never retrieve sensitive "HR Manager" or "System Admin" documents, even if they are semantically relevant.
 2. Precision Re-ranking (Two-Stage Retrieval)
