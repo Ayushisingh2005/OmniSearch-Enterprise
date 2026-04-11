@@ -25,42 +25,35 @@ export default function Sidebar({ role, setRole }: SidebarProps) {
   useEffect(() => { setMounted(true); }, []);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+  const file = e.target.files?.[0];
+  if (!file) return;
 
-    setIsScanning(true);
-    setOcrResult(null); // Clear previous results
-    
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = async () => {
-      const base64 = reader.result;
+  // Only allow files smaller than 1MB to avoid '413 Payload Too Large' errors
+  if (file.size > 1024 * 1024) {
+    alert("Image is too large. Please use a smaller screenshot.");
+    return;
+  }
+
+  setIsScanning(true);
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/api/v1/ocr', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: reader.result }),
+      });
       
-      try {
-        const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
-        const response = await fetch('/api/ocr', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ image: base64 }),
-        });
-        
-        const data = await response.json();
-        
-        if (data.text) {
-          setOcrResult(data.text); // Set the real-time output
-        } else if (data.error) {
-          alert(`Error: ${data.error}`);
-        }
-      } catch (err) {
-        console.error("OCR API Error:", err);
-        alert("Failed to connect to AI Vision Service.");
-      } finally {
-        setIsScanning(false);
-      }
-    };
+      const data = await response.json();
+      setOcrResult(data.text); // This updates the blue box
+    } catch (err) {
+      setOcrResult("Could not reach Python backend.");
+    } finally {
+      setIsScanning(false);
+    }
   };
-
-  if (!mounted) return null;
+};
 
   return (
     <aside 

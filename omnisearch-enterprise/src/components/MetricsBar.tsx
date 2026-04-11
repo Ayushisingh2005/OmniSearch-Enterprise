@@ -1,11 +1,18 @@
 import { Activity, Zap, Layers, BarChart3 } from 'lucide-react';
 
-export default function MetricsBar() {
+interface MetricsProps {
+  latency: string;
+  faithfulness: string;
+  cache: string;
+  rerank: string;
+}
+
+export default function MetricsBar({ latency, faithfulness, cache, rerank }: MetricsProps) {
   const metrics = [
-    { label: 'Faithfulness', value: '0.98', icon: <BarChart3 className="text-green-500" size={18} />, color: 'bg-green-50' },
-    { label: 'Avg Latency', value: '840ms', icon: <Activity className="text-purple-500" size={18} />, color: 'bg-purple-50' },
-    { label: 'Cache Hit', value: 'Optimized', icon: <Zap className="text-orange-500" size={18} />, color: 'bg-orange-50' },
-    { label: 'Re-Ranker', value: 'Active', icon: <Layers className="text-blue-500" size={18} />, color: 'bg-blue-50' },
+    { label: 'Faithfulness', value: faithfulness, icon: <BarChart3 className="text-green-500" size={18} />, color: 'bg-green-50' },
+    { label: 'Avg Latency', value: latency, icon: <Activity className="text-purple-500" size={18} />, color: 'bg-purple-50' },
+    { label: 'Semantic Cache', value: cache, icon: <Zap className="text-orange-500" size={18} />, color: 'bg-orange-50' },
+    { label: 'Re-Ranker', value: rerank, icon: <Layers className="text-blue-500" size={18} />, color: 'bg-blue-50' },
   ];
 
   return (
